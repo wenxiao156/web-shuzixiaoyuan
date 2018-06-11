@@ -1,0 +1,18 @@
+<div class="ui-main">
+	<div class="ui-lecture">
+		<div class="ui-title">我参与的讲座</div>
+		<div class="ui-info" v-for="item in lectureList">
+			<div class="ui-name">{{item.name}}</div>
+			<div class="ui-time">{{item.time}}</div>
+			<div class="ui-dec">简介: {{item.description}}</div>
+		</div>	
+	</div>
+	<div class="ui-talk">
+		<div class="ui-title">我参与的茶座</div>
+		<div class="ui-info" v-for="item in talkList">
+			<div class="ui-name">{{item.name}}</div>
+			<div class="ui-time">{{item.time}}</div>
+			<div class="ui-dec">简介: {{item.description}}</div>
+		</div>	
+	</div>
+</div>

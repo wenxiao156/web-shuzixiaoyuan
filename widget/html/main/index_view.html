@@ -1,0 +1,11 @@
+<div class="ui-main">
+	<div class="ui-top">
+		<div class="ui-top__logo"></div>
+	</div>
+	<div class="ui-list">
+		<div class="ui-list__item" v-for="item in indexList" v-touch:tap="openWinTap($index)">
+			<i style="background-image: url({{item.icon}});"></i>
+			<span class="ui-list__title">{{item.title}}</span>
+		</div>
+	</div>
+</div>

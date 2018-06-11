@@ -1,0 +1,77 @@
+@import "../_config.scss";
+
+html,
+body {
+	background-color: #fff;
+	font-size: 0;
+}
+
+.ui-main {
+	font-size: 0;
+	padding: .3rem .3rem;
+}
+
+.ui-title {
+	display: block;
+	color: #333;
+	font-size: .38rem;
+	text-align: center;
+}
+
+.ui-poster {
+	display: block;
+	height: 3rem;
+	margin: .2rem .4rem;
+	@include bgi-full(url(../../image/placeholder.png));
+}
+
+.ui-line {
+	margin-bottom: .2rem;
+	padding-bottom: .2rem;
+	font-size: .26rem;
+	color: #796d6d;
+	em {
+		font-weight: 500;
+		color: #222;
+	}
+}
+
+.ui-btn {
+	display: block;
+	height: .6rem;
+	width: 3rem;
+	line-height: .6rem;
+	border-radius: .1rem;
+	margin: auto;
+	margin-top:  1rem;
+	text-align: center;
+	color: #fff;
+	font-size: .26rem;
+	background-color: #44e242;
+	&.is-grey {
+		background-color: #796d6d;
+	}
+}
+
+.ui-interaction {
+	display: block;
+	float: right;
+	font-size: .26rem;
+}
+
+.ui-like {
+	display: inline-block;
+	height: .45rem;
+	width: .45rem;
+	background-size: .45rem;
+	@include bgi-center(url(../../image/lecture/like.png));
+    &.is-like {
+	    @include bgi-center(url(../../image/lecture/hasLike.png));	
+	}
+}
+
+.ui-likeNum {
+	display: inline-block;
+	vertical-align: top;
+	line-height: .55rem;
+}

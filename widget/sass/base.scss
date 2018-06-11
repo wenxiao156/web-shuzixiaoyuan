@@ -1,0 +1,12 @@
+// 导入公共scss模块
+@import "base/base";
+@import "config";
+
+html,
+body {
+    line-height: 1;
+    font-size: $rootFontSize;
+    color: $mainFontColor;
+    background-color: #fff;
+    -webkit-tap-highlight-color: transparent;
+}

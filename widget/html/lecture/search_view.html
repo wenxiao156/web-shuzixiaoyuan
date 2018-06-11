@@ -1,0 +1,33 @@
+<div class="ui-main">
+	<div class="ui-search">
+		<i v-touch:tap="searchTap"></i>
+		<input type="text" placeholder="请输入讲座主题等关键字" class="ui-search__box"></input>
+	</div>
+	<div class="ui-noInfo" v-show="showInfo === 0">
+		<i></i>
+		<div class="ui-noInfo__message">暂无结果</div>
+	</div>
+	<!-- 列表 -->
+	<div class="ui-list" v-show="showInfo === 1">
+		<div class="ui-item" v-for="item in searchList">
+			<div class="ui-item__avater" style="background-image: url({{item.avater}})"></div>
+			<div class="ui-item__name">{{item.name}}</div>
+			<div class="ui-item__info">
+				<div class="ui-item__title">{{item.title}}</div>
+				<div class="ui-line">
+					<i class="ui-item__icon"></i>
+				    <div class="ui-item__content">{{item.time}}</div>
+				</div>
+				<div class="ui-line">
+					<i class="ui-item__icon is-locationIcon"></i>
+				    <div class="ui-item__content">{{item.position}}</div>
+				</div>
+				<div class="ui-line">
+					<i class="ui-item__icon is-typeIcon"></i>
+					<div class="ui-item__content">{{item.type}}</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

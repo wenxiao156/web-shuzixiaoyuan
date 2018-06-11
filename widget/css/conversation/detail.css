@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* @name: 转为REM单位fn
+ * @ps: 默认宽度为750px
+ */
+/* @name: 上下左右居中 (未知高度)
+ * @ps: 需要设置父元素 display:table
+ */
+/* @name: 上下左右居中 （确定高度）*/
+/*
+ * @name: 文字溢出显示省略号
+ * @ps: 需要设置宽度
+ */
+/* @name: 强制不换行 */
+/* @name: 清除浮动 */
+/*
+ * @name:  三角形
+ * @param: $size  大小
+ * @param: $color 颜色
+ * @param: $type {string}  类型 (up || down || left || right || topleft || topright || bottomleft || bottomright)
+ */
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+html,
+body {
+  background-color: #fff;
+  font-size: 0; }
+
+.ui-main {
+  font-size: 0;
+  padding: .3rem .3rem; }
+
+.ui-title {
+  display: block;
+  color: #333;
+  font-size: .38rem;
+  text-align: center; }
+
+.ui-poster {
+  display: block;
+  height: 3rem;
+  margin: .2rem .4rem;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100% 100%;
+       -o-background-size: 100% 100%;
+          background-size: 100% 100%;
+  background-image: url(../../image/placeholder.png); }
+
+.ui-line {
+  margin-bottom: .2rem;
+  padding-bottom: .2rem;
+  font-size: .26rem;
+  color: #796d6d; }
+  .ui-line em {
+    font-weight: 500;
+    color: #222; }
+
+.ui-btn {
+  display: block;
+  height: .6rem;
+  width: 3rem;
+  line-height: .6rem;
+  -webkit-border-radius: .1rem;
+     -moz-border-radius: .1rem;
+          border-radius: .1rem;
+  margin: auto;
+  margin-top: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: .26rem;
+  background-color: #44e242; }
+  .ui-btn.is-grey {
+    background-color: #796d6d; }
+
+.ui-interaction {
+  display: block;
+  float: right;
+  font-size: .26rem; }
+
+.ui-like {
+  display: inline-block;
+  height: .45rem;
+  width: .45rem;
+  -webkit-background-size: .45rem .45rem;
+     -moz-background-size: .45rem;
+       -o-background-size: .45rem;
+          background-size: .45rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(../../image/lecture/like.png); }
+  .ui-like.is-like {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../../image/lecture/hasLike.png); }
+
+.ui-likeNum {
+  display: inline-block;
+  vertical-align: top;
+  line-height: .55rem; }
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRldGFpbC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsa0JBQWlCO0FBQ2pCOztJQUVHO0FBQ0g7O0lBRUc7QUFDSCwwQkFBeUI7QUFDekI7OztJQUdHO0FBQ0gsbUJBQWtCO0FBQ2xCLGtCQUFpQjtBQUNqQjs7Ozs7SUFLRztBQUNILFVBQVM7QUFDVCxVQUFTO0FBQ1QsYUFBWTtBQUNaLFlBQVc7QUFDWCxZQUFXO0FBQ1gsV0FBVTtBQUNWLFlBQVc7QUFDWCxXQUFVO0FBQ1YsV0FBVTtBQUNWLFdBQVU7QUFDVixTQUFRO0FBQ1IsV0FBVTtBQUNWLFdBQVU7QUFDVixXQUFVO0FBQ1YsWUFBVztBQUNYOztFQUVFLHdCQUF1QjtFQUN2QixjQUFhLEVBQUU7O0FBRWpCO0VBQ0UsY0FBYTtFQUNiLHNCQUFxQixFQUFFOztBQUV6QjtFQUNFLGdCQUFlO0VBQ2YsYUFBWTtFQUNaLG1CQUFrQjtFQUNsQixvQkFBbUIsRUFBRTs7QUFFdkI7RUFDRSxnQkFBZTtFQUNmLGNBQWE7RUFDYixxQkFBb0I7RUFDcEIsOEJBQTZCO0VBQzdCLDBCQUF5QjtFQUN6QixvQ0FBMkI7S0FBM0IsaUNBQTJCO09BQTNCLCtCQUEyQjtVQUEzQiw0QkFBMkI7RUFDM0Isb0RBQW1ELEVBQUU7O0FBRXZEO0VBQ0Usc0JBQXFCO0VBQ3JCLHVCQUFzQjtFQUN0QixtQkFBa0I7RUFDbEIsZ0JBQWUsRUFBRTtFQUNqQjtJQUNFLGtCQUFpQjtJQUNqQixhQUFZLEVBQUU7O0FBRWxCO0VBQ0UsZ0JBQWU7RUFDZixlQUFjO0VBQ2QsYUFBWTtFQUNaLG9CQUFtQjtFQUNuQiw4QkFBcUI7S0FBckIsMkJBQXFCO1VBQXJCLHNCQUFxQjtFQUNyQixjQUFhO0VBQ2Isa0JBQWlCO0VBQ2pCLG9CQUFtQjtFQUNuQixhQUFZO0VBQ1osbUJBQWtCO0VBQ2xCLDJCQUEwQixFQUFFO0VBQzVCO0lBQ0UsMkJBQTBCLEVBQUU7O0FBRWhDO0VBQ0UsZ0JBQWU7RUFDZixjQUFhO0VBQ2IsbUJBQWtCLEVBQUU7O0FBRXRCO0VBQ0UsdUJBQXNCO0VBQ3RCLGdCQUFlO0VBQ2YsZUFBYztFQUNkLHdDQUF3QjtLQUF4Qiw4QkFBd0I7T0FBeEIsNEJBQXdCO1VBQXhCLHlCQUF3QjtFQUN4Qiw4QkFBNkI7RUFDN0Isb0NBQW1DO0VBQ25DLHFEQUFvRCxFQUFFO0VBQ3REO0lBQ0UsOEJBQTZCO0lBQzdCLG9DQUFtQztJQUNuQyx3REFBdUQsRUFBRTs7QUFFN0Q7RUFDRSx1QkFBc0I7RUFDdEIscUJBQW9CO0VBQ3BCLHFCQUFvQixFQUFFIiwiZmlsZSI6ImNvbnZlcnNhdGlvbi9kZXRhaWwuY3NzIiwic291cmNlUm9vdCI6Ii4uL3Nhc3MvIn0= */

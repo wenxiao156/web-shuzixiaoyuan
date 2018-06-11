@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>baseWin页面</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/baseWin/iconfont.css">
+    <link rel="stylesheet" href="../../css/baseWin/index.css">
+</head>
+
+<body>
+    <!-- <script src="../../script/utils/response.js"></script> -->
+    <div id="header" class="ui-header is-base">
+        <div id="leftBtn" class="ui-header__leftBtn" onclick="btnTap(1);" tapmode="active">
+            <!-- <i id="leftIcon" class="iconfont icon-xiangzuojiantou"></i>
+            <span id="leftText">返回</span> -->
+        </div>
+        <div id="title" class="ui-header__title"></div>
+        <div id="rightBtn" class="ui-header__rightBtn" onclick="btnTap(2);" tapmode="active">
+            <!-- <span id="rightText"></span>
+            <i id="rightIcon" class="iconfont icon-saoyisao"></i> -->
+        </div>
+    </div>
+    <div id="content">
+        <div id="loader" class="loader">
+            <div class="loader-inner ball-clip-rotate-multiple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var hash = window.location.hash;
+    var _leftBtn = document.getElementById('leftBtn');
+    var _title = document.getElementById('title');
+    var _rightBtn = document.getElementById('rightBtn');
+    var _header = document.getElementById('header');
+    var _loader = document.getElementById('loader');
+    var headerOpts = {};
+    if (hash) {
+        var param = hash.slice(1).split('&');
+        var paramData = {};
+        for (var i = 0; i < param.length; i++) {
+            var kv = param[i].split('=');
+            paramData[kv[0]] = decodeURIComponent(kv[1]);
+        }
+        // 左边按钮设置
+        var leftBtnDom = '';
+        headerOpts['leftIcon'] = paramData['leftIcon'] || 'icon-xiangzuojiantou';
+        headerOpts['leftText'] = paramData['leftText'] || '';
+        leftBtnDom += '<i id="leftIcon" class="iconfont ' + headerOpts['leftIcon'] + '"></i>';
+        leftBtnDom += '<span id="leftText">' + headerOpts['leftText'] + '</span>';
+        _leftBtn.innerHTML = leftBtnDom;
+        // 标题设置
+        headerOpts['title'] = paramData['title'] || '';
+        _title.innerText = headerOpts['title'];
+        // 右边按钮设置
+        var rightBtnDom = '';
+        headerOpts['rightIcon'] = paramData['rightIcon'] || '';
+        headerOpts['rightText'] = paramData['rightText'] || '';
+        rightBtnDom += '<i id="rightIcon" class="iconfont ' + headerOpts['rightIcon'] + '"></i>';
+        rightBtnDom += '<span id="rightText">' + headerOpts['rightText'] + '</span>';
+        _rightBtn.innerHTML = rightBtnDom;
+        // 状态栏设置
+        if (_header) {
+            if (paramData['StatusBarHeight']) {
+                _header.style.paddingTop = paramData['StatusBarHeight'] + 'px';
+            }
+        }
+        setTimeout(function() {
+            _header.style.opacity = 1;
+            _loader.style.opacity = 1;
+            if((/android/gi).test(navigator.appVersion)) {
+                _title.style.webkitTransform = 'translate3d(0,0,0)'      
+            }else {
+                _title.classList.add('move');    
+            }
+        }, 20);
+    }
+
+    window.setHeader = function(opts) {
+        for (var key in opts) {
+            headerOpts[key] = opts[key];
+            if (key == 'title') {
+                _title.innerText = opts[key];
+            } else if (key == 'leftIcon') {
+                var _leftIcon = document.getElementById('leftIcon');
+                _leftIcon.className = 'iconfont ' + opts[key];
+            } else if (key == 'leftText') {
+                document.getElementById('leftText').innerText = opts[key];
+            } else if (key == 'rightIcon') {
+                var _rightIcon = document.getElementById('rightIcon');
+                _rightIcon.className = 'iconfont ' + opts[key];
+            } else if (key == 'rightText') {
+                document.getElementById('rightText').innerText = opts[key];
+            }
+        }
+    };
+
+    window.btnTap = function(type) {
+        if (type == 1) {
+            window.leftBtnTap && window.leftBtnTap();
+        } else if (type == 2) {
+            if (!headerOpts.rightIcon && !headerOpts.rightText) return;
+            window.rightBtnTap && window.rightBtnTap();
+        }
+    };
+    </script>
+    <script src="../../script/base.js"></script>
+    <script src="../../script/global.js" data-path="M/baseWin/index" id="entry"></script>
+</body>
+
+</html>

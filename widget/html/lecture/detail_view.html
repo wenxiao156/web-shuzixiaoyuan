@@ -1,0 +1,15 @@
+<div class="ui-main">
+	<div class="ui-title">{{name}}</div>
+	<div class="ui-poster" v-show="poster" style="background-image: url({{poster}})"></div>
+	<div class="ui-line"><em>讲座摘要： </em>{{description}}</div>
+	<div class="ui-line"><em>时间： </em>{{time}}</div>
+	<div class="ui-line"><em>地点： </em>{{position}}</div>
+    <div class="ui-line"><em>主讲人： </em>{{presenter}}</div>
+    <div class="ui-line"><em>主讲人介绍： </em>{{presenterInfo}}</div>
+    <div class="ui-line"><em>面向对象： </em>{{object}}</div>
+    <div class="ui-interaction">
+    	<i class="ui-like" v-bind:class="hasLike ? 'is-like' : ''" v-touch:tap="likeTap"></i>
+    	<div class="ui-likeNum">{{likeNum}}</div>
+    </div> 
+    <div class="ui-btn" v-bind:class="hasApply ?'is-grey' : ''" v-touch:tap="applyTap">讲座预报名</div>
+</div>

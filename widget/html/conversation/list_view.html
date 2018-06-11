@@ -1,0 +1,58 @@
+<div class="ui-main">
+	<div class="ui-top">
+		<i class="ui-top__left"></i>
+		<div class="ui-top__title">讲座列表</div>
+		<i class="ui-top__search" v-touch:tap="searchTap"></i>
+	</div>
+	<div class="ui-tap">
+		<div class="ui-tap__tap" v-bind:class="showIndex === 0 ? 'is-change': ''" v-touch:tap="changeTap(0)">预告</div>
+		<div class="ui-tap__tap" v-bind:class="showIndex === 1 ? 'is-change': ''" v-touch:tap="changeTap(1)">
+		全部</div>
+	</div>
+	<!-- 预告列表 -->
+	<div class="ui-list" v-show="showIndex === 0">
+		<div class="ui-item" v-for="item in forecastList">
+			<div class="ui-item__avater" style="background-image: url({{item.avater}})"></div>
+			<div class="ui-item__name">{{item.name}}</div>
+			<div class="ui-item__info">
+				<div class="ui-item__title">{{item.title}}</div>
+				<div class="ui-line">
+					<i class="ui-item__icon"></i>
+				    <div class="ui-item__content">{{item.time}}</div>
+				</div>
+				<div class="ui-line">
+					<i class="ui-item__icon is-locationIcon"></i>
+				    <div class="ui-item__content">{{item.position}}</div>
+				</div>
+				<div class="ui-line">
+					<i class="ui-item__icon is-typeIcon"></i>
+					<div class="ui-item__content">{{item.type}}</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- 全部列表 -->
+	<div class="ui-list" v-show="showIndex === 1">
+		<div class="ui-item" v-for="item in allList">
+			<div class="ui-item__avater" style="background-image: url({{item.avater}})"></div>
+			<div class="ui-item__name">{{item.name}}</div>
+			<div class="ui-item__info">
+				<div class="ui-item__title">{{item.title}}</div>
+				<div class="ui-line">
+					<i class="ui-item__icon"></i>
+				    <div class="ui-item__content">{{item.time}}</div>
+				</div>
+				<div class="ui-line">
+					<i class="ui-item__icon is-locationIcon"></i>
+				    <div class="ui-item__content">{{item.position}}</div>
+				</div>
+				<div class="ui-line">
+					<i class="ui-item__icon is-typeIcon"></i>
+					<div class="ui-item__content">{{item.type}}</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
