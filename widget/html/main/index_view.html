@@ -1,10 +1,28 @@
 <div class="ui-main">
-	<div class="ui-top">
+	<!-- <div class="ui-top">
 		<div class="ui-top__logo"></div>
-	</div>
+	</div> -->
+	<div class="ui-name">
+        <div class="ui-user">{{userName}}</div>
+        <div class="ui-message">{{messageNum}}</div>
+    </div>
+    <div class="ui-record">
+    	<div class="ui-record__item">
+    		<div class="ui-record__name">预报名</div>
+    		<div class="ui-record__num">{{registration}}</div>
+    	</div>
+    	<div class="ui-record__item">
+    		<div class="ui-record__name">讲座参与</div>
+    		<div class="ui-record__num">{{lectureRecord}}</div>
+    	</div>
+    	<div class="ui-record__item">
+    		<div class="ui-record__name">茶座参与</div>
+    		<div class="ui-record__num">{{conversationRecord}}</div>
+    	</div>	
+    </div>
 	<div class="ui-list">
 		<div class="ui-list__item" v-for="item in indexList" v-touch:tap="openWinTap($index)">
-			<i style="background-image: url({{item.icon}});"></i>
+			<!-- <i style="background-image: url({{item.icon}});"></i> -->
 			<span class="ui-list__title">{{item.title}}</span>
 		</div>
 	</div>
