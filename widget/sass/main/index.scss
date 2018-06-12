@@ -29,13 +29,14 @@ html,body {
 	padding-top: 3rem;
 	padding-left: .5rem;
 	font-size: .6rem;
-	font-weight: 600;
+	text-shadow: 0 .1rem .1rem #222;
 	color: #fff;
 }
 
 .ui-user {
 	display: inline-block;
 	line-height: .5rem;
+	font-weight: 500;
 }
 
 .ui-message {
@@ -62,29 +63,70 @@ html,body {
 }
 
 .ui-record__name {
+	font-weight: 500;
 	color: #9a9999;
 }
 
 .ui-list {
 	margin-top: .5rem;
-	font-size: .3rem;
+	font-size: .32rem;
 }
 
 .ui-list__item {
 	display: inline-block;
+	position: relative;
 	width: 46.5%;
 	margin: .1rem;
 	height: 2rem;
 	border-radius: .1rem;
-	line-height: 2rem;
+	box-shadow: .1rem .1rem .2rem #222;
 	text-align: center;
 	background-color: #fff;
 	i {
-		display: inline-block;
+		display: block;
 		width: 1rem;
 		height: 1rem;
+		margin: auto;
+		margin-top: .2rem;
+		margin-bottom: .1rem;
 		background-size: 1rem;
 		@include bgi-full(url(../../image/placeholder.png));
 	}
+	span {
+		display: block;
+	}
 }
 
+.ui-bottom {
+	position: fixed;
+	display: flex;
+	bottom: 0;
+	height: 1rem;
+	width: 100%;
+	z-index: 1000;
+	background-color: #fff;
+}
+
+.ui-bottom__tap {
+	flex: 1;
+}
+
+.ui-bottom__icon {
+	display: block;
+	width: .5rem;
+	height: .5rem;
+	margin: auto;
+	margin-top: .1rem;
+	@include bgi-full(url(../../image/main/me.png));
+	&.is-signIn {
+		@include bgi-full(url(../../image/main/me.png));
+	}
+	&.is-me {
+		@include bgi-full(url(../../image/main/me.png));
+	}
+}
+
+.ui-bottom__name {
+	font-size: .2rem;
+	text-align: center;
+}

@@ -22,8 +22,22 @@
     </div>
 	<div class="ui-list">
 		<div class="ui-list__item" v-for="item in indexList" v-touch:tap="openWinTap($index)">
-			<!-- <i style="background-image: url({{item.icon}});"></i> -->
+			<i style="background-image: url({{item.icon}});"></i>
 			<span class="ui-list__title">{{item.title}}</span>
+		</div>
+	</div>
+	<div class="ui-bottom">
+		<div class="ui-bottom__tap">
+			<i class="ui-bottom__icon"></i>
+			<div class="ui-bottom__name">提问</div>
+		</div>
+		<div class="ui-bottom__tap">
+			<i class="ui-bottom__icon is-signIn"></i>
+			<div class="ui-bottom__name">签到</div>
+		</div>
+		<div class="ui-bottom__tap">
+			<i class="ui-bottom__icon is-me"></i>
+			<div class="ui-bottom__name">我</div>
 		</div>
 	</div>
 </div>
