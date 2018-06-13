@@ -6,8 +6,7 @@
 	</div>
 	<div class="ui-tap">
 		<div class="ui-tap__tap" v-bind:class="showIndex === 0 ? 'is-change': ''" v-touch:tap="changeTap(0)">预告</div>
-		<div class="ui-tap__tap" v-bind:class="showIndex === 1 ? 'is-change': ''" v-touch:tap="changeTap(1)">
-		全部</div>
+		<div class="ui-tap__tap" v-bind:class="showIndex === 1 ? 'is-change': ''" v-touch:tap="changeTap(1)">全部</div>
 	</div>
 	<!-- 预告列表 -->
 	<div class="ui-list" v-show="showIndex === 0">

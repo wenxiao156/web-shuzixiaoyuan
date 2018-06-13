@@ -3,7 +3,7 @@ define(function(require, exports, module) {
 
     var main = new Vue({
         el: '#main',
-        template: _g.getTemplate('me/participationRecord_view'),
+        template: _g.getTemplate('me/beforeApply_view'),
         data: {
             showIndex: 0,
             forecastList: [{
@@ -20,9 +20,8 @@ define(function(require, exports, module) {
                 time: '2018-06-05  19:00-21:00',
                 position: '龙洞校区行政楼二楼学术报告厅',
                 type: '人生类'
-            }],
-            allList: [{
-                avater: '../../image/lecture/avater1.jpg',
+            }, {
+                avater: '../../image/lecture/avater.jpg',
                 name: '汤耀平',
                 title: '漫步人生路',
                 time: '2018-06-05  19:00-21:00',
