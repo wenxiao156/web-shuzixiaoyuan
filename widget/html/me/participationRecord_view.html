@@ -1,18 +1,56 @@
 <div class="ui-main">
-	<div class="ui-lecture">
-		<div class="ui-title">我参与的讲座</div>
-		<div class="ui-info" v-for="item in lectureList">
-			<div class="ui-name">{{item.name}}</div>
-			<div class="ui-time">{{item.time}}</div>
-			<div class="ui-dec">简介: {{item.description}}</div>
-		</div>	
+	<div class="ui-top">
+		<i class="ui-top__left"></i>
+		<div class="ui-top__title">参与记录</div>
+		<i class="ui-top__search" v-touch:tap="searchTap"></i>
 	</div>
-	<div class="ui-talk">
-		<div class="ui-title">我参与的茶座</div>
-		<div class="ui-info" v-for="item in talkList">
-			<div class="ui-name">{{item.name}}</div>
-			<div class="ui-time">{{item.time}}</div>
-			<div class="ui-dec">简介: {{item.description}}</div>
-		</div>	
+	<div class="ui-tap">
+		<div class="ui-tap__tap" v-bind:class="showIndex === 0 ? 'is-change': ''" v-touch:tap="changeTap(0)">讲座</div>
+		<div class="ui-tap__tap" v-bind:class="showIndex === 1 ? 'is-change': ''" v-touch:tap="changeTap(1)">茶座</div>
+	</div>
+	<!-- 讲座列表 -->
+	<div class="ui-list" v-show="showIndex === 0">
+		<div class="ui-item" v-for="item in forecastList">
+			<div class="ui-item__avater" style="background-image: url({{item.avater}})"></div>
+			<div class="ui-item__name">{{item.name}}</div>
+			<div class="ui-item__info">
+				<div class="ui-item__title">{{item.title}}</div>
+				<div class="ui-line">
+					<i class="ui-item__icon"></i>
+				    <div class="ui-item__content">{{item.time}}</div>
+				</div>
+				<div class="ui-line">
+					<i class="ui-item__icon is-locationIcon"></i>
+				    <div class="ui-item__content">{{item.position}}</div>
+				</div>
+				<div class="ui-line">
+					<i class="ui-item__icon is-typeIcon"></i>
+					<div class="ui-item__content">{{item.type}}</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+	<!-- 茶座列表 -->
+	<div class="ui-list" v-show="showIndex === 1">
+		<div class="ui-item" v-for="item in allList">
+			<div class="ui-item__avater" style="background-image: url({{item.avater}})"></div>
+			<div class="ui-item__name">{{item.name}}</div>
+			<div class="ui-item__info">
+				<div class="ui-item__title">{{item.title}}</div>
+				<div class="ui-line">
+					<i class="ui-item__icon"></i>
+				    <div class="ui-item__content">{{item.time}}</div>
+				</div>
+				<div class="ui-line">
+					<i class="ui-item__icon is-locationIcon"></i>
+				    <div class="ui-item__content">{{item.position}}</div>
+				</div>
+				<div class="ui-line">
+					<i class="ui-item__icon is-typeIcon"></i>
+					<div class="ui-item__content">{{item.type}}</div>
+				</div>
+				
+			</div>
+		</div>
 	</div>
 </div>
