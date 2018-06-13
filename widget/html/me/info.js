@@ -6,13 +6,13 @@ define(function (require, exports, module) {
         template: _g.getTemplate('me/info_view'),
         data: {
             avatar: '../../image/me/img-avatar.jpeg',
-            name: 'xxx',
+            name: '哈萨克',
             studentId: '3215004210',
             major: '信息管理与信息系统',
             college: '管理学院',
             phone: '13899732898',
-            email: '7339829@qq.com'
-
+            email: '7339829@qq.com',
+            messageNum: 3,
         },
         ready: function() {
         },
