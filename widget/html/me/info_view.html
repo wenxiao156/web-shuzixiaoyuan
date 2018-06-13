@@ -3,6 +3,9 @@
         <i class="ui-avatar__img" style="background-image: url({{avatar}})"></i>
         <div class="ui-avatar__name">{{name}}</div>
         <div class="ui-avatar__id">学号：{{studentId}}</div>
+        <i class="ui-avatar__level" v-show="lectureNum < 8"></i>
+        <i class="ui-avatar__level is-two" v-show="lectureNum >= 8 && lectureNum < 16"></i>
+        <i class="ui-avatar__level is-three" v-show="lectureNum > 16"></i>
         <i class="ui-avatar__right"></i>
     </div>
     <div class="ui-info">

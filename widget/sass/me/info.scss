@@ -38,6 +38,21 @@ body {
     color: #888;
 }
 
+.ui-avatar__level {
+    position: absolute;
+    top: .6rem;
+    right: 1rem;
+    width: .7rem;
+    height: .6rem;
+    @include bgi-full(url(../../image/me/levelOne.png));
+    &.is-two {
+        @include bgi-full(url(../../image/me/levelTwo.png));
+    }
+    &.is-three {
+        @include bgi-full(url(../../image/me/levelThree.png));
+    }
+}
+
 .ui-avatar__right {
 	position: absolute;
 	top: .85rem;
