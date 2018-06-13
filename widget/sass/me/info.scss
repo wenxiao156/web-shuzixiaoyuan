@@ -2,46 +2,66 @@
 
 html,
 body {
-	background-color: #efefef;
-	font-size: 0;
+    background-color: #efefef;
+    font-size: 0;
 }
 
 .ui-main {
-	height: 100%;
+    height: 100%;
 }
 
 .ui-avatar {
-	position: relative;
-	width: 100%;
-	height: 3rem;
-	background-color: #b3bfea;
-	i {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: auto;
-		width: 1.5rem;
-		height: 1.5rem;
-		border-radius: 1.5rem;
-		@include bgi-full(url(../../image/placeholder.png));
-	}
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    margin-top: .3rem;
+    padding-left: 2.2rem;
+    background-color: #fff;
+}
+
+.ui-avatar__img {
+    position: absolute;
+    top: .25rem;
+    left: .3rem; // margin: auto;
+    width: 1.5rem;
+    height: 1.5rem; // border-radius: 1.5rem;
+    @include bgi-full(url(../../image/placeholder.png));
+}
+
+.ui-avatar__name {
+    padding-top: .5rem;
+    font-size: .3rem;
+}
+
+.ui-avatar__id {
+    font-size: .26rem;
+    color: #888;
+}
+
+.ui-avatar__right {
+	position: absolute;
+	top: .85rem;
+	right: .2rem;
+	width: .3rem;
+	height: .3rem;
+	@include bgi-full(url(../../image/me/right.png));
 }
 
 .ui-info {
-	padding-left: .3rem;
-	padding-right: .3rem;
-	background-color: #fff;
+    margin-top: .3rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    background-color: #fff;
 }
 
 .ui-line {
-	height: 1rem;
-	width: 100%;
-	line-height: 1rem;
-	font-size: .3rem;
-	background-color: #fff;
-	@include line(down);
+    position: relative;
+    height: 1rem;
+    width: 100%;
+    line-height: 1rem;
+    font-size: .3rem;
+    background-color: #fff;
+    @include line(down);
 }
 
 .ui-line__label {
@@ -49,6 +69,29 @@ body {
 }
 
 .ui-line__info {
-	float: right;
-	color: #969595;
+    float: right;
+    color: #969595;
+}
+
+.ui-line__icon {
+    position: absolute;
+    top: .35rem;
+    right: 0;
+    width: .3rem;
+    height: .3rem;
+    @include bgi-full(url(../../image/me/right.png));
+}
+
+.ui-line__messageIcon {
+    position: absolute;
+    top: .35rem;
+    right: 0;
+    width: .3rem;
+    height: .3rem;
+    line-height: 1.4;
+    border-radius: .3rem;
+    background-color: red;
+    font-size: .2rem;
+    color: #fff;
+    text-align: center;
 }

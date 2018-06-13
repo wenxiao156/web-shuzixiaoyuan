@@ -1,0 +1,34 @@
+<div class="ui-main">
+	<div class="weui-cells__title" style="font-size: .26rem">您的问题：</div>
+		<div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="请输入您想提问的问题" rows="5"></textarea>
+                    <div class="weui-textarea-counter"><span>0</span>/200</div>
+                </div>
+            </div>
+        </div>
+	<!-- <div class="ui-type">请选择问题类别：</div> -->
+	<div class="weui-cells__title" style="font-size: .26rem">请选择问题类别：</div>
+	<div class="ui-type">
+		<div class="ui-type__line" v-for="item in typeList" v-touch:tap="selectTap($index)">
+			<div class="ui-type__label">{{item.name}}</div>
+			<i v-show="item.select"></i>
+		</div>
+	</div>
+	<!-- <div class="weui-cells weui-cells_radio">
+            <label class="weui-cell weui-check__label" for="{{item.id}}" v-for="item in typeList">
+                <div class="weui-cell__bd">
+                    <p>{{item.name}}</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <input type="radio" class="weui-check" name="radio1" id="{{item.id}}">
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>
+        </div> -->
+	<div class="ui-btn">
+		<div class="weui-btn weui-btn_primary">提交</div>
+	</div>
+	
+</div>

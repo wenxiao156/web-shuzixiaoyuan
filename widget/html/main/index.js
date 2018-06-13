@@ -9,7 +9,7 @@ define(function (require, exports, module) {
             messageNum: 3,
             registration: 1,
             lectureRecord: 32,
-            conversationRecord: 21,
+            // conversationRecord: 21,
             indexList: [{
                 icon: '../../image/main/lecture1.png',
                 title: '讲座',
@@ -23,7 +23,9 @@ define(function (require, exports, module) {
         ready: function() {
         },
         methods: {
-                    
+            openWinTap: function(index) {
+                console.log(index)
+            }          
         }
     });
     

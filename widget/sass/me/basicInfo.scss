@@ -1,0 +1,51 @@
+@import "../_config.scss";
+
+html,
+body {
+    background-color: #efefef;
+    font-size: 0;
+}
+
+.ui-main {
+    height: 100%;
+}
+
+.ui-info {
+    margin-top: .3rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    background-color: #fff;
+}
+
+.ui-line {
+    position: relative;
+    height: 1rem;
+    width: 100%;
+    line-height: 1rem;
+    font-size: .3rem;
+    background-color: #fff;
+    @include line(down);
+    &.is-big {
+    	height: 1.5rem;
+    }
+}
+
+.ui-line__label {
+    float: left;
+    &.is-big {
+    	line-height: 1.5rem;
+    }
+}
+
+.ui-line__avatar {
+	float: right;
+	width: 1.2rem;
+	height: 1.2rem;
+	margin-top: .1rem;
+	@include bgi-full(url(../../image/placeholder.png));
+}
+
+.ui-line__info {
+    float: right;
+    color: #969595;
+}
