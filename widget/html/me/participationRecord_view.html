@@ -4,10 +4,10 @@
 		<div class="ui-top__title">讲座参与记录</div>
 		<i class="ui-top__search" v-touch:tap="searchTap"></i>
 	</div>
-	<!-- <div class="ui-tap">
+	<div class="ui-tap">
 		<div class="ui-tap__tap" v-bind:class="showIndex === 0 ? 'is-change': ''" v-touch:tap="changeTap(0)">讲座</div>
 		<div class="ui-tap__tap" v-bind:class="showIndex === 1 ? 'is-change': ''" v-touch:tap="changeTap(1)">茶座</div>
-	</div> -->
+	</div>
 	<!-- 讲座列表 -->
 	<div class="ui-list" v-show="showIndex === 0">
 		<div class="ui-item" v-for="item in forecastList">
