@@ -15,7 +15,24 @@ define(function (require, exports, module) {
             object: '5级-17级各班班委、入党积极分子以及预备党员、青马工程学员，等等',
             hasApply: 0,
             hasLike: 0,
-            likeNum: 23
+            likeNum: 23,
+            comment: 0,
+            commentList: [{
+                avatar: '../../image/lecture/avater.jpg',
+                name: '花生壳的回款的恐惧阿卡卡',
+                time: '2018-06-10 15:19:02',
+                comment: '讲得超棒，很喜欢这个老师！的哈慷慨激昂卡卡打卡机安检'
+            },{
+                avatar: '../../image/lecture/avater.jpg',
+                name: '花生壳',
+                time: '2018-06-10 15:19:02',
+                comment: '讲得超棒，很喜欢这个老师！'
+            },{
+                avatar: '../../image/lecture/avater.jpg',
+                name: '花生壳',
+                time: '2018-06-10 15:19:02',
+                comment: '讲得超棒，很喜欢这个老师！'
+            }]
         },
         ready: function() {
         },
@@ -29,7 +46,16 @@ define(function (require, exports, module) {
                 }
             },
             applyTap: function() {
-                main.hasApply = !main.hasApply; 
+                var apply = confirm("您确定要预报名吗");
+                if(apply == true) {
+                    main.hasApply = 1;
+                }
+            },
+            changeCommentTap: function() {
+                main.comment = 1;
+            },
+            reportTap: function() {
+                main.comment = 0;
             }
         }
     });

@@ -8,6 +8,9 @@ body {
 
 .ui-main {
 	font-size: 0;
+}
+
+.ui-content {
 	padding: .3rem .3rem;
 }
 
@@ -74,4 +77,93 @@ body {
 	display: inline-block;
 	vertical-align: top;
 	line-height: .55rem;
+}
+
+.ui-comment {
+	position: relative;
+	margin-top: .2rem;
+	background-color: #d2cdcd;
+	width: 100%;
+	height: 1.5rem;
+}
+
+.ui-comment__btn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 2rem;
+	height: .6rem;
+	line-height: .6rem;
+	border-radius: .1rem;
+	font-size: .3rem;
+	text-align: center;
+	color: #fff;
+	background-color: #d61b1b;
+}
+
+.ui-report__btn {
+	margin: auto;
+	width: 2rem;
+	height: .6rem;
+	line-height: .6rem;
+	border-radius: .1rem;
+	font-size: .3rem;
+	text-align: center;
+	color: #fff;
+	background-color: #d61b1b;
+}
+
+.ui-commentList {
+	padding:.3rem;
+}
+
+.ui-commentItem {
+	padding: .2rem 0;
+	background-color: #fff;
+	@include line(down);
+}
+
+.ui-commentItem__info {
+	display: block;
+}
+
+.ui-commentItem__avatar {
+	display: inline-block;
+	width: .5rem;
+	height: .5rem;
+	border-radius: .5rem;
+	@include bgi-full(url(../../image/placeholder.png));
+}
+
+.ui-commentItem__content {
+	display: inline-block;
+	margin-left: .2rem;
+	vertical-align: top;
+	line-height: .5rem;
+}
+
+.ui-commentItem__name {
+	display: inline-block;
+	max-width: 2.5rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: .25rem;
+	font-weight: 600;
+	color: #000;
+}
+
+.ui-commentItem__text {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: .2rem;
+	font-size: .2rem;
+}
+
+.ui-commentItem__comment {
+	margin-left: .7rem;
+	font-size: .26rem;
 }
