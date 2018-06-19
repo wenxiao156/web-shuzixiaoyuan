@@ -15,7 +15,7 @@
     <div class="ui-btn" v-bind:class="hasApply ?'is-grey' : ''" v-touch:tap="applyTap">讲座预报名</div>
     </div>
     <div class="ui-comment" v-show="comment === 0">
-        <div class="ui-comment__btn" v-touch:tap="changeCommentTap">参与互动</div>
+        <div class="ui-comment__btn" v-touch:tap="changeCommentTap">我来说一句</div>
     </div>
     <div class="ui-report" v-show="comment === 1">
         <div class="weui-cells weui-cells_form" v-show="comment === 1">
