@@ -21,11 +21,11 @@ define(function (require, exports, module) {
                         w: api.winWidth,
                         h: api.winHeight
                     },
-                    animation: {
-                        type: 'movein',
-                        subType: 'from_right',
-                        duration: 200
-                    },
+                    // animation: {
+                    //     type: 'movein',
+                    //     subType: 'from_right',
+                    //     duration: 200
+                    // },
                     pageParam: {
                         isBig: main.isBig
                     }
