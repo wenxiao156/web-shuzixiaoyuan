@@ -1,0 +1,127 @@
+@import "../_config.scss";
+
+html,
+body {
+	background-color: #fff;
+	font-size: 0;
+}
+
+.ui-main {
+	font-size: 0;
+}
+
+.ui-content {
+	padding: .3rem .3rem;
+}
+
+.ui-title {
+	display: block;
+	color: #333;
+	font-size: .38rem;
+	text-align: center;
+}
+
+.ui-poster {
+	display: block;
+	height: 3rem;
+	margin: .2rem .4rem;
+	@include bgi-full(url(../../image/placeholder.png));
+}
+
+.ui-line {
+	margin-bottom: .2rem;
+	padding-bottom: .2rem;
+	font-size: .26rem;
+	color: #796d6d;
+	em {
+		font-weight: 500;
+		color: #222;
+	}
+}
+
+.ui-interaction {
+	display: block;
+	float: right;
+	font-size: .26rem;
+}
+
+.ui-like {
+	display: inline-block;
+	height: .45rem;
+	width: .45rem;
+	background-size: .45rem;
+	@include bgi-center(url(../../image/lecture/like.png));
+    &.is-like {
+	    @include bgi-center(url(../../image/lecture/hasLike.png));	
+	}
+}
+
+.ui-likeNum {
+	display: inline-block;
+	vertical-align: top;
+	line-height: .55rem;
+}
+
+.ui-report__btn {
+	margin: auto;
+	width: 2rem;
+	height: .6rem;
+	line-height: .6rem;
+	border-radius: .1rem;
+	font-size: .3rem;
+	text-align: center;
+	color: #fff;
+	background-color: #d61b1b;
+}
+
+.ui-commentList {
+	padding:.3rem;
+}
+
+.ui-commentItem {
+	padding: .2rem 0;
+	background-color: #fff;
+	@include line(down);
+}
+
+.ui-commentItem__info {
+	display: block;
+}
+
+.ui-commentItem__avatar {
+	display: inline-block;
+	width: .5rem;
+	height: .5rem;
+	border-radius: .5rem;
+	@include bgi-full(url(../../image/placeholder.png));
+}
+
+.ui-commentItem__content {
+	display: inline-block;
+	margin-left: .2rem;
+	vertical-align: top;
+	line-height: .5rem;
+}
+
+.ui-commentItem__name {
+	display: inline-block;
+	max-width: 2.5rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: .25rem;
+	font-weight: 600;
+	color: #000;
+}
+
+.ui-commentItem__text {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: .2rem;
+	font-size: .2rem;
+}
+
+.ui-commentItem__comment {
+	margin-left: .7rem;
+	font-size: .26rem;
+}

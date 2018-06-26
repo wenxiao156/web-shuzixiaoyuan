@@ -3,7 +3,7 @@ define(function (require, exports, module) {
 
     var main = new Vue({
         el: '#main',
-        template: _g.getTemplate('conversation/detail_view'),
+        template: _g.getTemplate('me/discussion_view'),
         data: {
             name: '第九十讲毓秀讲堂----漫步人生路',
             poster: '../../image/lecture/desert.jpg',
@@ -13,10 +13,8 @@ define(function (require, exports, module) {
             presenter: '汤耀平',
             presenterInfo: '任广东工业大学党委副书记、纪委书记，教授，硕士生导师',
             object: '5级-17级各班班委、入党积极分子以及预备党员、青马工程学员，等等',
-            hasApply: 0,
             hasLike: 0,
             likeNum: 23,
-            comment: 0,
             commentList: [{
                 avatar: '../../image/lecture/avater.jpg',
                 name: '花生壳的回款的恐惧阿卡卡',
@@ -44,15 +42,6 @@ define(function (require, exports, module) {
                 } else {
                     main.likeNum ++;
                 }
-            },
-            applyTap: function() {
-                var apply = confirm("您确定要预报名吗");
-                if(apply == true) {
-                    main.hasApply = 1;
-                }
-            },
-            changeCommentTap: function() {
-                main.comment = 1;
             },
             reportTap: function() {
                 main.comment = 0;

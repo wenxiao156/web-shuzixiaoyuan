@@ -1,0 +1,41 @@
+<div class="ui-main">
+    <div class="ui-content">
+    <div class="ui-title">{{name}}</div>
+    <div class="ui-poster" v-show="poster" style="background-image: url({{poster}})"></div>
+    <div class="ui-line"><em>茶座摘要： </em>{{description}}</div>
+    <div class="ui-line"><em>时间： </em>{{time}}</div>
+    <div class="ui-line"><em>地点： </em>{{position}}</div>
+    <div class="ui-line"><em>主讲人： </em>{{presenter}}</div>
+    <div class="ui-line"><em>主讲人介绍： </em>{{presenterInfo}}</div>
+    <div class="ui-line"><em>面向对象： </em>{{object}}</div>
+    <div class="ui-interaction">
+        <i class="ui-like" v-bind:class="hasLike ? 'is-like' : ''" v-touch:tap="likeTap"></i>
+        <div class="ui-likeNum">{{likeNum}}</div>
+    </div> 
+    </div>
+    <div class="ui-report">
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="开始与老师互动" rows="5"></textarea>
+                    <div class="weui-textarea-counter"><span>0</span>/200</div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-report__btn" v-touch:tap="reportTap">开始讨论</div>
+    </div>
+    
+    <div class="ui-commentList">
+        <div class="ui-commentItem" v-for="item in commentList">
+            <div class="ui-commentItem__info">
+                <div class="ui-commentItem__avatar" style="background-image: url({{item.avatar}})"></div>
+                <div class="ui-commentItem__content">
+                <div class="ui-commentItem__name">{{item.name}}</div>
+                <div class="ui-commentItem__text">{{item.time}}</div>
+                <div class="ui-commentItem__text">#{{$index + 1}}楼</div>
+                </div>
+            </div>
+            <div class="ui-commentItem__comment">{{item.comment}}</div>
+        </div>
+    </div>
+</div>
