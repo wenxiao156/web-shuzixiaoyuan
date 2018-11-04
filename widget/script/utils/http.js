@@ -67,28 +67,47 @@ define(function(require, exports, module) {
             var self = this;
             if(self.isLock) return;
             if(!opts.data || !opts.url) return;
-            var postData = self.fetchPostData(opts.data);
+            // var postData = self.fetchPostData(opts.data);
+            var postData = {
+                data: $.extend(true, {}, opts.data),
+                token: opts.token || sessionStorage.getItem('token')
+            };
             if(opts.lock !== false) self.lock();
             if(opts.isSync) _g.showProgress();
-            api && api.ajax({
+            $.ajax({
                 url: CONFIG.HOST + opts.url,
-                method: opts.method || 'post',
-                timeout: 60*20,
-                dataType: 'json',
-                returnAll: false,
-                data: { values: postData }
-            }, function(ret, err){
-                self.unlock();
-                _g.refreshDone();
-                if(opts.isSync) _g.hideProgress();
-                if(ret){
-                    opts.success && opts.success(ret);
-                }else {
-                    // _g.toast('错误接口：'+opts.url+'，错误码：'+err.code+'，错误信息：'+err.msg+'，网络状态码：'+err.statusCode);
+                type: opts.method || 'post',
+                data: JSON.stringify(postData),
+                dataType:"json",
+                contentType: opts.contentType || 'application/json', //'application/x-www-form-urlencoded'
+                processData: opts.processData || false, //!== false,
+                success: function (result) {
+                    opts.success && opts.success(result);
+                },
+                error:function(err) {
                     _g.toast('网络连接失败, 请检查网络!');
                     opts.error && opts.error(err);
-                };
-            });
+                }
+            })
+            // api && api.ajax({
+            //     url: CONFIG.HOST + opts.url,
+            //     method: opts.method || 'post',
+            //     timeout: 60*20,
+            //     dataType: 'json',
+            //     returnAll: false,
+            //     data: { values: postData }
+            // }, function(ret, err){
+            //     self.unlock();
+            //     _g.refreshDone();
+            //     if(opts.isSync) _g.hideProgress();
+            //     if(ret){
+            //         opts.success && opts.success(ret);
+            //     }else {
+            //         // _g.toast('错误接口：'+opts.url+'，错误码：'+err.code+'，错误信息：'+err.msg+'，网络状态码：'+err.statusCode);
+            //         _g.toast('网络连接失败, 请检查网络!');
+            //         opts.error && opts.error(err);
+            //     };
+            // });
         },
         lock: function() {
             this.isLock = true;

@@ -8,15 +8,15 @@ window.CONFIG = {}; // 全局配置
 CONFIG.DEFAULT_AVATAR = '../../image/placeholder.png'; // 默认头像
 CONFIG.DEFAULT_PHOTO = '../../image/placeholder.png'; // 默认图片
 APPMODE == 'dev' && (function() {
-    CONFIG.HOST = 'http://';
+    CONFIG.HOST = 'http://120.77.204.252:80/';
     var isApp = !!window.localStorage.getItem('isApp');
     if (window.APPMODE == 'dev' && !isApp) {
         // 如果是开发模式并且不是app启动
-        CONFIG.HOST = '';
+        CONFIG.HOST = 'http://120.77.204.252:80/';
     }
 })();
 APPMODE == 'pub' && (function() {
-    CONFIG.HOST = 'http://';
+    CONFIG.HOST = 'http://120.77.204.252:80/';
 })();
 
 apiready = function() {
