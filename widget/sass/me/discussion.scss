@@ -39,23 +39,6 @@ body {
 	}
 }
 
-.ui-btn {
-	display: block;
-	height: .6rem;
-	width: 3rem;
-	line-height: .6rem;
-	border-radius: .1rem;
-	margin: auto;
-	margin-top:  1rem;
-	text-align: center;
-	color: #fff;
-	font-size: .26rem;
-	background-color: #44e242;
-	&.is-grey {
-		background-color: #796d6d;
-	}
-}
-
 .ui-interaction {
 	display: block;
 	float: right;
@@ -77,32 +60,6 @@ body {
 	display: inline-block;
 	vertical-align: top;
 	line-height: .55rem;
-}
-
-.ui-comment {
-	position: relative;
-	margin-top: .2rem;
-	background-color: #d2cdcd;
-	width: 100%;
-	height: 1.5rem;
-	font-size: .3rem;
-}
-
-.ui-comment__btn {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-	width: 2rem;
-	height: .6rem;
-	line-height: .6rem;
-	border-radius: .1rem;
-	font-size: .3rem;
-	text-align: center;
-	color: #fff;
-	background-color: #d61b1b;
 }
 
 .ui-report__btn {

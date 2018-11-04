@@ -242,7 +242,7 @@
                 }
                 api.openWin({
                     name: opts.name + '-win',
-                    url: '../baseWin/index.html' + headerOpts,
+                    url: opts.url,//'../baseWin/index.html' + headerOpts,
                     bounces: false,
                     slidBackEnabled: !!opts.slidBackEnabled,
                     vScrollBarEnabled: api.systemType != 'android',
@@ -250,6 +250,28 @@
                     pageParam: { opts: opts }
                 });
             }
+        },
+        frameBuilder: function (opts) {
+            if (!opts || !opts.name) return null;
+            var Frame = {
+                name: opts.name,
+                open: function () {
+                    api.openFrame(opts);
+                },
+                show: function () {
+                    api.setFrameAttr({
+                        name: this.name,
+                        hidden: false
+                    });
+                },
+                hide: function () {
+                    api.setFrameAttr({
+                        name: this.name,
+                        hidden: true
+                    });
+                }
+            };
+            return Frame;
         },
         // 设置baseWin页面头部
         setHeader: function(opts) {

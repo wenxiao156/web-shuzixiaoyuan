@@ -1,0 +1,8 @@
+<div class="ui-main">
+	<div class="ui-top">
+		<i class="ui-top__left"></i>
+		<div class="ui-top__title">{{isBig == 1 ? '背景' : '头像'}}</div>
+		<i class="ui-top__right" v-touch:tap="openFrameTap"></i>
+	</div>
+	<div class="ui-img"style="background-image: url({{img}})" v-bind:class="isBig == 1 ? 'is-big' : ''"></div>
+</div>
