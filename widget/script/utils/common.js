@@ -242,7 +242,7 @@
                 }
                 api.openWin({
                     name: opts.name + '-win',
-                    url: '../baseWin/index.html' + headerOpts,
+                    url: opts.url,//'../baseWin/index.html' + headerOpts,
                     bounces: false,
                     slidBackEnabled: !!opts.slidBackEnabled,
                     vScrollBarEnabled: api.systemType != 'android',

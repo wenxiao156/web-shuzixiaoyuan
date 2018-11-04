@@ -13,6 +13,14 @@ define(function (require, exports, module) {
         },
         ready: function() {
         },
+        methods: {
+            toDetail: function() {
+                _g.openWin({
+                    name: 'basicInfo',
+                    url: '../me/basicInfo_frame.html'
+                })
+            }
+        }
     });
     
     module.exports = {};
