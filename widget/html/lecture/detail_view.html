@@ -8,7 +8,13 @@
     <div class="ui-line"><em>主讲人： </em>{{presenter}}</div>
     <div class="ui-line"><em>主讲人介绍： </em>{{presenterInfo}}</div>
     <div class="ui-line"><em>面向对象： </em>{{object}}</div>
+	<div class="ui-line"><em>是否提供讲座证明： </em>{{isProved?"是":"否"}}</div>
+	<div class="ui-line"><em>限制人数： </em>{{limitNumOfPep}}</div>
+	<div class="ui-line"><em>所属学院： </em>{{sponsor}}</div>
+	<div class="ui-line"><em>发布组织： </em>{{organization}}</div>
+	<div class="ui-line"><em>讲座类别： </em>{{category}}</div>
     <div class="ui-interaction">
+		<div class="ui-likeNum">报名人数：{{applyNum}}</div>
     	<i class="ui-like" v-bind:class="hasLike ? 'is-like' : ''" v-touch:tap="likeTap"></i>
     	<div class="ui-likeNum">{{likeNum}}</div>
     </div> 

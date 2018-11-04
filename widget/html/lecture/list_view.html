@@ -10,7 +10,7 @@
 	</div>
 	<!-- 预告列表 -->
 	<div class="ui-list" v-show="showIndex === 0">
-		<div class="ui-item" v-for="item in forecastList">
+		<div class="ui-item" v-for="item in forecastList" v-touch:tap="queryldetail">
 			<div class="ui-item__avater" style="background-image: url({{item.avater}})"></div>
 			<div class="ui-item__name">{{item.name}}</div>
 			<div class="ui-item__info">
@@ -26,8 +26,7 @@
 				<div class="ui-line">
 					<i class="ui-item__icon is-typeIcon"></i>
 					<div class="ui-item__content">{{item.type}}</div>
-				</div>
-				
+				</div>				
 			</div>
 		</div>
 	</div>
@@ -53,5 +52,11 @@
 				
 			</div>
 		</div>
+	</div>
+	
+
+	<div class="paging">
+		<button style="width:100px;font-size:20px;" v-touch:tap="">上一页</button>
+		<button style="width:100px;font-size:20px;" v-touch:tap="">下一页</button>
 	</div>
 </div>
