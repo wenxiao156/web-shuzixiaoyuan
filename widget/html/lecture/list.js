@@ -65,7 +65,43 @@ define(function(require, exports, module) {
                 type: '人生类'
             }],
         },
-        ready: function() {},
+        ready: function() {
+            var url = 'http://127.0.0.1/user/findLectureListPage.do';
+            var currentPage = 1;
+            var showCount = 5;
+            var paging = {"currentPage": currentPage,"showCount": showCount};
+
+            _g.ajax({
+                lock: true,
+                url: url,
+                isAsync: false,
+                data: {
+                    paging: paging
+                },
+                success: function(res){
+                    if(res.code == 200){
+                       /*pc端的代码 if(result.data.paging) {
+                    var data1 = { list: result.data.paging.list };
+                    _g.initPaginator({
+                        currentPage: result.data.paging.currentPage,
+                        totalPages: result.data.paging.totalPage,
+                        totalCount: result.data.paging.totalResult,
+                        onPageClicked: function(page) {
+                            console.log(page)
+                            data.currentPage = page;
+                            getList();
+                        }
+                    });
+                    _g.render('lecture/list-V', data1, '#table');
+                    } else {
+                        var result = { list: [] };
+                        _g.render('lecture/list-V', result, '#table');
+                    }*/
+                    }
+                }
+            })
+
+        },
         methods: {
             searchTap: function() {
                 _g.openWin({
@@ -83,6 +119,15 @@ define(function(require, exports, module) {
                 } else {
                     main.showIndex = 1;
                 }
+            },
+            queryldetail: function(id){
+                //获取id，
+                
+                
+                //跳转页面,携带id
+
+
+ 
             }
         }
     });
