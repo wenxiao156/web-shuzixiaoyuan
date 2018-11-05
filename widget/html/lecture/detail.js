@@ -1,6 +1,8 @@
 define(function (require, exports, module) {
     var Http = require('U/http');
 
+    
+
     var main = new Vue({
         el: '#main',
         template: _g.getTemplate('lecture/detail_view'),
@@ -21,10 +23,7 @@ define(function (require, exports, module) {
             hasApply: 0,
             applyNum: 500, //预报名人数
             hasLike: 0,
-<<<<<<< HEAD
-            likeNum: 23 //点赞人数
-=======
-            likeNum: 23,
+            likeNum: 23, //点赞人数
             comment: 0,
             commentList: [{
                 avatar: '../../image/lecture/avater.jpg',
@@ -42,13 +41,12 @@ define(function (require, exports, module) {
                 time: '2018-06-10 15:19:02',
                 comment: '讲得超棒，很喜欢这个老师！'
             }]
->>>>>>> 4e60accba635e097fae04b9c6b2e4ac11435ecd9
         },
         ready: function() {
             //获取上个页面传过来的id
 
             
-            queryldetail(id)
+            this.queryldetail()//id;
 
         },
         methods: {
@@ -61,7 +59,6 @@ define(function (require, exports, module) {
                 }
             },
             applyTap: function() {
-<<<<<<< HEAD
                 main.hasApply = !main.hasApply;
                 if(main.hasApply) {
                     main.applyNum ++;
@@ -106,7 +103,6 @@ define(function (require, exports, module) {
                         }
                     }
                 })
-=======
                 var apply = confirm("您确定要预报名吗");
                 if(apply == true) {
                     main.hasApply = 1;
@@ -117,7 +113,6 @@ define(function (require, exports, module) {
             },
             reportTap: function() {
                 main.comment = 0;
->>>>>>> 4e60accba635e097fae04b9c6b2e4ac11435ecd9
             }
         }
     });
